@@ -1,4 +1,4 @@
-body {
+body 	{
 	max-width: 100%;
 	max-height: 100%;
 	background-size: cover;
@@ -6,13 +6,30 @@ body {
 	background-image: url(../assets/tvBackground.jpg);
 }
 
-#title 	{
+#title	{
 	font-size: 28px;
 	font-family: 'Gloria Hallelujah', cursive;
 	padding: 10px;
 }
 
-#tvshow-form 	{
+.tvshow	{
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 10px;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 15px;
+	border-radius: 10px;
+}
+
+.tvshow:nth-child(odd) 	{
+    background-color: #f2ba13;
+}
+
+.tvshow:nth-child(even) {
+	background-color: #f48309;
+}
+
+#tvshow-form	{
 	font-size: 20px;
 	font-family: 'Gloria Hallelujah', cursive;
 	text-align: right;
@@ -23,9 +40,11 @@ body {
 	width: 175px;
 	height: 23px;
 	margin-top: 10px;
+	background-color: #f2ba13;
 }
 
-input[type=submit] {
+#find-tvshow,
+.submit-button	{
     font-family: 'Gloria Hallelujah', cursive;
     padding: 5px;
 }
