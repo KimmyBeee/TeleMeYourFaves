@@ -5,8 +5,11 @@
 	<meta charset="UTF-8">
 	<title>Tele Me Your Faves</title>
 
-<!-- External CSS stylesheet Link -->
+<!-- Reset Stylesheet Link -->
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
+<!-- Google Font link -->
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<!-- External CSS stylesheet Link -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- Favicon link for tab -->
 	<link rel="icon" href="assets/tinytv.png">	
@@ -20,11 +23,16 @@
 <!-- Div for buttons -->
 	<div id="buttons"></div>
 <!-- Div for user input -->
-	<div id="input-field"></div>
+	<div id="input-field">
+<!-- User Input Field -->
+		<form id="tvshow-form">
+      		<label for="tvshow-input">...now tele me some of yours</label><br>
+      		<input type="text" id="tvshow-input"><br>
+<!-- Set up submit button to trigger Ajax call -->
+      		<input id="find-tvshow" type="submit" class="submit-button" value="Find Fave TV">
+	</div>
 <!-- Div where gif stills will show, ready to be viewed -->
 	<div id="gif-theatre"></div>
-
-
 <!-- External Javascript Link -->
 <script type="text/javascript" href="javascript/app.js"></script>
 <!-- Link for JQuery -->
