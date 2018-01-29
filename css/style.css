@@ -48,3 +48,18 @@ body 	{
     font-family: 'Gloria Hallelujah', cursive;
     padding: 5px;
 }
+
+#gif-theatre	{
+	max-width: 1000px:
+	padding: 10px;
+	display: inline-block;
+}
+.gifs {
+	margin-top: 15px;
+	margin-right: 15px;
+	border-style: outset;
+	border-color: #aa09ea;
+	border-width: 10px;
+	border-radius: 10px;
+
+}

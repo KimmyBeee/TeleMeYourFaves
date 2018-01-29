@@ -1,9 +1,63 @@
 //Array for first set of buttons of my fave TV
 var tvShows =["Adventure Time", "Mindhunter", "Empire", "Game of Thrones", "The Wire"];
 
+function displayGifs()	{
+	$("#gif-theatre").empty();
+	var tvShow = $(this).attr("data-name");
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + tvShow + "&api_key=Bp3nrGa25U3WAujs5nJ0y2qyHbrkHX1A&limit=10";
+
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).done(function(response) {
+		console.log(response);
+
+		for (var i = 0; i < response.data.length; i++)	{
+			var newImg = $("<img>");
+			var ratingP = $("<p>");
+			var rating = response.data[i].rating;
+			 // $("<p>").text("Rating: " + response.data[i].rating);
+			var still = response.data[i].images.fixed_height_still.url
+			var moving = response.data[i].images.fixed_height.url
+
+			newImg.addClass("gifs");
+			newImg.attr("src", still);
+			newImg.attr("data-state", "still");
+			newImg.attr("data-still", still);
+			newImg.attr("data-moving", moving);
+			ratingP.attr("data-rating", rating);
+			$("#gifs").prepend(ratingP);
+			$("#gif-theatre").append(newImg);
+
+
+			// var rating = $("<p>");
+
+			// var pOne = $("<p>").text("Rating: " + response.data[i].rating);
+
+			// $("#gif-theatre").prepend(pOne);
+		}
+
+		
+	});
+}
+
+	$(document).on("click", ".gifs", function()	{
+		if ($(this).attr("data-state") === "still") {
+			$(this).attr("src", $(this).attr("data-moving"));
+			$(this).attr("data-state", "moving")
+		} else if ($(this).attr("data-state") === "moving") {
+			$(this).attr("src", $(this).attr("data-still"));
+			$(this).attr("data-state", "still")
+		}
+
+	})
+
+
 function makeButtons()	{
 //Dump made buttons out of the div to avoid repeat buttons when called upon
 	$("#tvshow-buttons").empty();
+	$("#gif-theatre").empty();
+	$("#tvshow-input").val(" ");
 
 //Loop through the array of tv shows
 	for (var i = 0; i < tvShows.length; i++)	{
@@ -22,14 +76,17 @@ function makeButtons()	{
 
 //Make the buttons functional with a click function
 $("#find-tvshow").on("click", function(event)	{
-	
+//Prevent the page from automatically reloading with each new button	
 	event.preventDefault();
-	
+//Takes text from input field	
 	var tvShow = $("#tvshow-input").val().trim();
-	
+//Adds movie from textbox to the array tvShows
+	tvShows.push(tvShow);
+//Call on the function that cycle through the array and manifests buttons		
 	makeButtons();
-
-	var queryURL
 });
+
+//Add click listener to all my tvshow buttons as they are made
+$(document).on("click", ".tvshow", displayGifs);
 
 makeButtons();
