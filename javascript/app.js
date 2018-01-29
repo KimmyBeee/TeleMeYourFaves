@@ -13,8 +13,9 @@ function displayGifs()	{
 		console.log(response);
 
 		for (var i = 0; i < response.data.length; i++)	{
+			var newDiv = $("<div class='flex'>");
 			var newImg = $("<img>");
-			var ratingP = $("<p>");
+			// var ratingP = $("<p>");
 			var rating = response.data[i].rating;
 			 // $("<p>").text("Rating: " + response.data[i].rating);
 			var still = response.data[i].images.fixed_height_still.url
@@ -25,11 +26,13 @@ function displayGifs()	{
 			newImg.attr("data-state", "still");
 			newImg.attr("data-still", still);
 			newImg.attr("data-moving", moving);
-			ratingP.attr("data-rating", rating);
-			$("#gifs").prepend(ratingP);
-			$("#gif-theatre").append(newImg);
+			// ratingP.attr("data-rating", rating);
+			// $("#gifs").prepend(rating);
+			$(newDiv).append(newImg);
+			$(newDiv).append("<p> Rating: " + rating + "</p>");
+			$("#gif-theatre").append(newDiv);
 
-
+			// debugger;
 			// var rating = $("<p>");
 
 			// var pOne = $("<p>").text("Rating: " + response.data[i].rating);

@@ -45,7 +45,7 @@ body 	{
 
 #find-tvshow,
 .submit-button	{
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Gloria Hallelujah', cursive !important;
     padding: 5px;
 }
 
@@ -62,4 +62,9 @@ body 	{
 	border-width: 10px;
 	border-radius: 10px;
 
+}
+
+.flex {
+	display: inline-block;
+	font-family: 'Gloria Hallelujah', cursive;
 }
