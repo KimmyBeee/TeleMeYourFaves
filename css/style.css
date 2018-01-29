@@ -53,6 +53,8 @@ body 	{
 	max-width: 1000px:
 	padding: 10px;
 	display: inline-block;
+	text-align: center;
+	margin-top: 20px;
 }
 .gifs {
 	margin-top: 15px;
@@ -67,4 +69,15 @@ body 	{
 .flex {
 	display: inline-block;
 	font-family: 'Gloria Hallelujah', cursive;
+}
+
+p {
+	background-color: #84dcf4;
+	padding: 3px;
+	max-width: 125px;
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #aa09ea;
+	color: #aa09ea;
 }
