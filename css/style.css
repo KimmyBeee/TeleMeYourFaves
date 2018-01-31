@@ -46,7 +46,11 @@ body 	{
 #find-tvshow,
 .submit-button	{
     font-family: 'Gloria Hallelujah', cursive !important;
-    padding: 5px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #f48309;
+    border-radius: 10px;
 }
 
 #gif-theatre	{
